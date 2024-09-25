@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>PWA Demo | Home</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/static/css/home.css">
+        <script src="/static/js/home.js" type="module"></script>
+        <link rel="manifest" href="/static/manifest.json">
+        <script src="https://cdn.jsdelivr.net/npm/idb-keyval@6/+esm"></script>
+    </head>
+    <body>
+    <%- include('navbar') %>
+    
+        <div class="text-center mt-4">
+            <h1>Welcome to PWA's home page.</h1>
+            <h6>Take a picture of yourself, your dog, or your favorite meal!<br>Mark your day as <b>unforgetable</b>.</h6>
+        </div>
+
+        <!-- Code from: https://developer.mozilla.org/en-US/docs/Web/API/Media_Capture_and_Streams_API/Taking_still_photos -->
+        <div class="container">
+            <div class="row d-flex justify-content-around">
+                <div class="camera">
+                    <video id="video">Video stream not available.</video>
+                    <button id="startButton" class="btn btn-info m-4">Take photo</button>
+                </div>
+                <canvas id="canvas"></canvas>
+                <div class="output">
+                    <img id="photo" alt="The screen capture will appear in this box." />
+                    <button id="saveButton" class="btn btn-primary m-4">Save photo</button>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center mt-5">
+                <h3>Make sure to see your uploads!</h3>
+                <a class="btn btn-success ml-5" href="/uploads">Your Uploads</a>
+            </div>
+        </div>   
+    </body>
+</html>
